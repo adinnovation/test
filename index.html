@@ -1,0 +1,37 @@
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>adino3D</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
+</head>
+
+<body>
+
+    <a-scene>
+        <!-- カメラ -->
+        <a-camera><a-cursor></a-cursor></a-camera>
+        
+        <!-- ステージ -->
+        <!-- a-grid static-doby></a-grid -->
+        
+        <!-- 素材読み込み -->
+        <a-assets>
+            <img id="sky" src="model/24640153_l.jpg">
+            <a-asset-item id="adino" src="model/adino.gltf"></a-asset-item>
+        </a-assets>
+        
+        <!-- 空を画像に変更 -->
+        <a-sky color="skyblue"></a-sky>
+        
+        <!-- 読み込み済みの3Dモデルを表示 -->
+        <a-entity gltf-model="#adino" static-body></a-entity>
+        
+        <!-- コントローラ追加 -->
+        <a-entity oculus-touch-controls="hand: left"></a-entity>
+        <a-entity oculus-touch-controls="hand: right"></a-entity>
+        
+    </a-scene>
+
+</body>
+</html>
